@@ -3,3 +3,5 @@ databaseChangeLog:
       file: liquibase/changelog/001-create-user-table.xml
   - include:
       file: liquibase/changelog/002-create-subscription-table.xml
+  - include:
+      file: liquibase/changelog/003-create-post-table.xml
