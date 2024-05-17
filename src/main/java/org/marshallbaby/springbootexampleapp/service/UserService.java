@@ -2,6 +2,7 @@ package org.marshallbaby.springbootexampleapp.service;
 
 import lombok.RequiredArgsConstructor;
 import org.marshallbaby.springbootexampleapp.domain.User;
+import org.marshallbaby.springbootexampleapp.exception.NotFoundException;
 import org.marshallbaby.springbootexampleapp.repo.UserRepository;
 import org.springframework.stereotype.Service;
 
@@ -29,7 +30,7 @@ public class UserService {
     public User findUser(UUID userId) {
 
         return userRepository.findById(userId)
-                .orElseThrow(() -> new RuntimeException("NOT_FOUND"));
+                .orElseThrow(() -> new NotFoundException(format("Could not find user with id: [%s].", userId)));
     }
 
     public User createUser(User user) {
