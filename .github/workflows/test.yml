@@ -13,4 +13,4 @@ jobs:
 
       - name: List files
         run:
-          ls /
+          ls .
