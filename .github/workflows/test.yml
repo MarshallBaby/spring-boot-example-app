@@ -22,9 +22,6 @@ jobs:
           wget -P /tmp/jula https://raw.githubusercontent.com/MarshallBaby/JULA-GitHub-Action-Utils/master/collect-required-files.py
           python3 /tmp/jula/collect-required-files.py
 
-      - name: Early exit
-        if: steps.collect-files.outcome == 'failure'
-        run: exit 0
-
       - name: Show files
+        if: steps.collect-files.outcome == 'success'
         run: cat /tmp/jula/files_required.txt
