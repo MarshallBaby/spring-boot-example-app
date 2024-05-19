@@ -1,6 +1,9 @@
 name: Build project
 on: push
 
+env:
+  github_workspace: ${{ github.workspace }}
+
 jobs:
 
   build:
