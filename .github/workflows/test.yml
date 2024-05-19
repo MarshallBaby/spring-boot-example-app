@@ -9,8 +9,8 @@ jobs:
 
       - name: Greeting
         run:
-          echo "Hello!"
+          echo github.workspace
 
       - name: List files
         run:
-          ls .
+          ls ${{ github.workspace }}
