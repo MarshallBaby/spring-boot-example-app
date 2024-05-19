@@ -1,0 +1,16 @@
+name: Build project
+on: push
+
+jobs:
+
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+
+      - name: Greeting
+        run:
+          echo "Hello!"
+
+      - name: List files
+        run:
+          ll
