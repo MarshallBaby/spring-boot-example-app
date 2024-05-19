@@ -7,10 +7,10 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
 
-      - name: Greeting
-        run:
-          echo github.workspace
-
       - name: List files
         run:
-          ls ${{ github.workspace }}
+          ls ${{ github.workspace }} > ${{ files }}
+
+      - name: Aboba
+        run:
+          cat ${{ files }}
