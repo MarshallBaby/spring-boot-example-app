@@ -23,8 +23,8 @@ jobs:
           python3 /tmp/jula/collect-required-files.py
 
       - name: Early exit
-        if: steps.s1.outcome == 'failure'
-        run: exit 0
+        if: steps.collect-files.outcome == 'failure'
+        run: exit_with_success
 
       - name: Show files
         run: cat /tmp/jula/files_required.txt
