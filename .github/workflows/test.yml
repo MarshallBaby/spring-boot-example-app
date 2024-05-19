@@ -24,7 +24,7 @@ jobs:
 
       - name: Early exit
         if: steps.collect-files.outcome == 'failure'
-        run: exit_with_success
+        run: exit 0
 
       - name: Show files
         run: cat /tmp/jula/files_required.txt
