@@ -27,7 +27,7 @@ jobs:
         uses: actions/setup-java@v4
         if: steps.collect-files.outcome == 'success'
         with:
-          distribution: 'zulu' # See 'Supported distributions' for available options
+          distribution: 'zulu'
           java-version: '21'
 
       - name: Run Jula Agent
