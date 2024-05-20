@@ -11,6 +11,7 @@ import java.util.UUID;
 
 import static java.time.LocalDateTime.now;
 
+// @JULA:on
 @Service
 @RequiredArgsConstructor
 public class SubscriptionService {
