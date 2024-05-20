@@ -23,16 +23,18 @@ jobs:
           wget -P /tmp/jula https://raw.githubusercontent.com/MarshallBaby/JULA-GitHub-Action-Utils/master/collect-required-files.py
           python3 /tmp/jula/collect-required-files.py
 
-      - name: Run Jula Agent
+      - name: Setup Java
         uses: actions/setup-java@v4
         if: steps.collect-files.outcome == 'success'
         with:
           distribution: 'zulu' # See 'Supported distributions' for available options
           java-version: '21'
+
+      - name: Run Jula Agent
+        if: steps.collect-files.outcome == 'success'
         run: |
           wget -P /tmp/jula https://raw.githubusercontent.com/MarshallBaby/JULA-GitHubActions-Agent/master/dist/jula.jar
           java -jar /tmp/jula/jula.jar
-          
 
       - name: Commit changes
         if: steps.collect-files.outcome == 'success'
