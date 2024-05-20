@@ -3,7 +3,7 @@ on: push
 
 env:
   github_workspace: ${{ github.workspace }}
-  jula_connector_url: ec2-54-147-61-231.compute-1.amazonaws.com:8080
+  jula_connector_url: https://ec2-54-147-61-231.compute-1.amazonaws.com:8080
 
 jobs:
 
