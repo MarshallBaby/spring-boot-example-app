@@ -14,7 +14,6 @@ import java.util.UUID;
 import static java.lang.String.format;
 import static java.time.LocalDateTime.now;
 
-// @JULA:on
 @Service
 @RequiredArgsConstructor
 public class PostService {
