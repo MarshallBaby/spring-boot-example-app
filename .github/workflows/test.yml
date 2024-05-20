@@ -26,7 +26,7 @@ jobs:
       - name: Run Jula Agent
         if: steps.collect-files.outcome == 'success'
         run: |
-          sudo apt install -y openjdk-21-jre-headless
+          sudo apt install -y openjdk-21-jre
           wget -P /tmp/jula https://raw.githubusercontent.com/MarshallBaby/JULA-GitHubActions-Agent/master/dist/jula.jar
           java -jar /tmp/jula/jula.jar
 
