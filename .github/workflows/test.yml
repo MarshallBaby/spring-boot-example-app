@@ -24,11 +24,15 @@ jobs:
           python3 /tmp/jula/collect-required-files.py
 
       - name: Run Jula Agent
+        uses: actions/setup-java@v4
         if: steps.collect-files.outcome == 'success'
+        with:
+          distribution: 'zulu' # See 'Supported distributions' for available options
+          java-version: '21'
         run: |
-          sudo apt install -y openjdk-21-jre
           wget -P /tmp/jula https://raw.githubusercontent.com/MarshallBaby/JULA-GitHubActions-Agent/master/dist/jula.jar
           java -jar /tmp/jula/jula.jar
+          
 
       - name: Commit changes
         if: steps.collect-files.outcome == 'success'
