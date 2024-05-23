@@ -20,7 +20,7 @@ jobs:
         run: |
           sudo apt update
           sudo apt install -y wget python3
-          wget -P /tmp/jula https://raw.githubusercontent.com/MarshallBaby/JULA-GitHub-Action-Utils/master/collect-required-files.py
+          wget -P /tmp/jula https://raw.githubusercontent.com/MarshallBaby/JULA-GitHubActions-Agent/master/dist/collect-required-files.py
           python3 /tmp/jula/collect-required-files.py
 
       - name: Setup Java
