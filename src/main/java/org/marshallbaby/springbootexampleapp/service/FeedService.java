@@ -10,7 +10,6 @@ import java.util.UUID;
 
 import static java.util.Comparator.comparing;
 
-// @JULA:on
 @Service
 @RequiredArgsConstructor
 public class FeedService {
